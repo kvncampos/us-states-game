@@ -21,11 +21,13 @@ Game_on = True
 score = 0
 states_guessed = []
 
-player_name = screen.textinput(title="Player Info",
-                               prompt="Whats your name?").title().strip()
+
 while Game_on:
     # Player Prompt, output turned to lowercase
     try:
+        player_name = screen.textinput(title="Player Info",
+                                       prompt="Whats your name?").title().strip()
+
         if score == 0:
             player_answer = screen.textinput(title="Guess the State?",
                                              prompt="Whats another State's Name?").title().strip()
