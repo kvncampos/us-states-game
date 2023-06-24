@@ -13,4 +13,4 @@ class StateMark(Turtle):
         """X and Y Coordinates for Position of State."""
         self.hideturtle()
         self.goto(x, y)
-        self.write(state.capitalize(), font=FONT)
+        self.write(state.title(), font=FONT)

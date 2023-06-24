@@ -20,7 +20,7 @@ score = 0
 states_guessed = []
 
 player_name = screen.textinput(title="Player Info",
-                               prompt="Whats your name?").capitalize().strip()
+                               prompt="Whats your name?").title().strip()
 
 # Loop for continuing game
 while Game_on:
@@ -28,7 +28,7 @@ while Game_on:
     try:
         if score == 0:
             player_answer = screen.textinput(title="Guess the State?",
-                                             prompt="Whats another State's Name?").capitalize().strip()
+                                             prompt="Whats another State's Name?").title().strip()
         elif score == 50:
             Game_on = False
             print("Congratulations! All States have been Checked!")
@@ -38,7 +38,7 @@ while Game_on:
 
         else:
             player_answer = screen.textinput(title=f"{score}/50",
-                                             prompt="Whats another State's Name?").capitalize().strip()
+                                             prompt="Whats another State's Name?").title().strip()
 
     # If Player Hits Cancel Button, Game Ends.
     except AttributeError or None:

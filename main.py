@@ -22,13 +22,13 @@ score = 0
 states_guessed = []
 
 player_name = screen.textinput(title="Player Info",
-                               prompt="Whats your name?").lower().strip()
+                               prompt="Whats your name?").title().strip()
 while Game_on:
     # Player Prompt, output turned to lowercase
     try:
         if score == 0:
             player_answer = screen.textinput(title="Guess the State?",
-                                             prompt="Whats another State's Name?").lower().strip()
+                                             prompt="Whats another State's Name?").title().strip()
         elif score == 50:
             Game_on = False
             print("Congratulations! All States have been Checked!")
@@ -38,7 +38,7 @@ while Game_on:
 
         else:
             player_answer = screen.textinput(title=f"{score}/50",
-                                             prompt="Whats another State's Name?").lower().strip()
+                                             prompt="Whats another State's Name?").title().strip()
 
     except AttributeError or None:
         print("Goodbye! Thanks for playing.")
@@ -53,7 +53,7 @@ while Game_on:
     with open("50_states.csv") as s:
         states = csv.reader(s)
         for row in states:
-            state = row[0].lower()
+            state = row[0].title()
             if player_answer in state:
                 if player_answer not in states_guessed:
                     states_guessed.append(player_answer)
