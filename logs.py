@@ -14,6 +14,6 @@ log_alert.setLevel(logging.DEBUG)
 
 def LogSetup():
     # Create and configure logger
-    logging.basicConfig(filename="newfile.log",
+    logging.basicConfig(filename="50_States_Pandas.log",
                         format='%(asctime)s %(message)s',
                         filemode="a")
