@@ -21,7 +21,6 @@ Game_on = True
 score = 0
 states_guessed = []
 
-
 player = None
 # Loop to Prevent game from Starting W/O Player Name. 'Exit' keyword Exits the Game.
 while not player:
@@ -94,11 +93,10 @@ while Game_on:
         checkmark_state.checkmark(x, y, player_answer)
 
         # Checks states_guessed vs list of states and writes the remaining states in a CSV file.
-        s = set(states_guessed)
-        missing_states = [x for x in list_of_states if x not in s]
+        set_of_guessed_states = set(states_guessed)
+        missing_states = [state for state in list_of_states if state not in set_of_guessed_states]
         missed_states_data = pandas.DataFrame(missing_states, columns=["States_Missed"])
         missed_states_data.to_csv('missed_states.csv', index=False)
-
 
     # Logging Section, Logs Blank Inputs and Incorrect Guesses.
     if player_answer == '':
